@@ -319,6 +319,239 @@ ul {
 }
 
 /* ========================================
+   News
+   ======================================== */
+.news {
+  padding: 96px 0;
+  background-color: var(--color-bg);
+}
+
+.news__list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.news__item {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+  flex-wrap: wrap;
+}
+
+.news__item:first-child {
+  border-top: 1px solid #e0e0e0;
+}
+
+.news__date {
+  font-size: 0.85rem;
+  color: #888;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.news__tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 12px;
+  border-radius: 50px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.news__tag--event {
+  background-color: #E8F4FD;
+  color: var(--color-primary);
+}
+
+.news__tag--info {
+  background-color: #FFF3E0;
+  color: #E0A030;
+}
+
+.news__link {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  transition: color 0.3s;
+}
+
+a.news__link:hover,
+a.news__link:focus {
+  color: var(--color-primary);
+}
+
+.news__more {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.news__more-link {
+  display: inline-block;
+  padding: 12px 40px;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.news__more-link:hover,
+.news__more-link:focus {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+/* ========================================
+   News Page
+   ======================================== */
+.news-page {
+  padding-top: calc(var(--header-height) + 48px);
+  padding-bottom: 96px;
+  min-height: 60vh;
+}
+
+.news-page__title {
+  margin-top: 24px;
+}
+
+/* ========================================
+   Article Page
+   ======================================== */
+.article-page {
+  padding-top: calc(var(--header-height) + 48px);
+  padding-bottom: 96px;
+  min-height: 60vh;
+}
+
+.article-page__header {
+  max-width: 720px;
+  margin: 24px auto 48px;
+  text-align: center;
+}
+
+.article-page__date {
+  font-size: 0.85rem;
+  color: #888;
+  margin-right: 12px;
+}
+
+.article-page__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+.article-page__body {
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 2;
+  color: #333;
+}
+
+.article-page__body p {
+  margin-bottom: 24px;
+}
+
+.article-page__greeting {
+  margin-top: 48px;
+}
+
+.article-page__greeting-heading {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 32px;
+  color: var(--color-primary);
+}
+
+.article-page__greeting-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.article-page__greeting-photo {
+  flex-shrink: 0;
+  width: 200px;
+}
+
+.article-page__greeting-photo img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.article-page__greeting-text {
+  flex: 1;
+}
+
+.article-page__greeting-text p {
+  margin-bottom: 20px;
+}
+
+.article-page__greeting-sign {
+  margin-top: 32px;
+  text-align: right;
+}
+
+.article-page__greeting-role {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.article-page__greeting-sign-img {
+  width: 240px;
+  height: auto;
+  margin-left: auto;
+}
+
+.article-page__back {
+  max-width: 720px;
+  margin: 64px auto 0;
+  text-align: center;
+}
+
+.article-page__back-link {
+  display: inline-block;
+  padding: 12px 40px;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.article-page__back-link:hover,
+.article-page__back-link:focus {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .article-page__greeting-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .article-page__greeting-photo {
+    width: 160px;
+  }
+
+  .article-page__greeting-sign {
+    text-align: center;
+  }
+
+  .article-page__greeting-sign-img {
+    margin: 0 auto;
+  }
+}
+
+/* ========================================
    About
    ======================================== */
 .about {
@@ -500,6 +733,19 @@ ul {
 
   .header__nav-link::after {
     display: none;
+  }
+
+  .news__item {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .news__item > :first-child {
+    display: inline;
+  }
+
+  .news__tag {
+    align-self: flex-start;
   }
 
   .service__cards {
