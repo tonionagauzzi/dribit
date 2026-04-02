@@ -1,2 +1,2 @@
-# dribit
-株式会社ドリビットの立ち上げ場所
+# 株式会社ドリビット
+https://tonionagauzzi.github.io/dribit
